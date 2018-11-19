@@ -10,10 +10,9 @@ package br.senac.sc.Financeiroapi.model;
  * @author Alunos
  */
 public class Categoria {
-    
+
     private Long id;
     private String nome;
-    
 
     public Categoria() {
     }
@@ -22,8 +21,6 @@ public class Categoria {
         this.id = id;
         this.nome = nome;
     }
-    
-    
 
     public Long getId() {
         return id;
@@ -40,9 +37,5 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
-    
-    
-    
+
 }

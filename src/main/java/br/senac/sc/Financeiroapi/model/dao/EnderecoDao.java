@@ -85,13 +85,13 @@ public class EnderecoDao extends Dao implements DaoI<Endereco>{
             while (res.next()) {
                 endereco = new Endereco();
                 endereco.setId(res.getInt("id"));
-                endereco.setLogradouro(res.getString("nome"));
-                endereco.setNumero(res.getString("nome"));
-                endereco.setComplemento(res.getString("nome"));
-                endereco.setBairro(res.getString("nome"));
-                endereco.setCep(res.getString("nome"));
-                endereco.setCidade(res.getString("nome"));
-                endereco.setEstado(res.getString("nome"));
+                endereco.setLogradouro(res.getString("logradouro"));
+                endereco.setNumero(res.getString("numero"));
+                endereco.setComplemento(res.getString("complemento"));
+                endereco.setBairro(res.getString("bairro"));
+                endereco.setCep(res.getString("cep"));
+                endereco.setCidade(res.getString("cidade"));
+                endereco.setEstado(res.getString("estado"));
                 lista.add(endereco);
             }
             return lista;
@@ -109,7 +109,7 @@ public class EnderecoDao extends Dao implements DaoI<Endereco>{
             res = stmt.executeQuery();
             if (res.next()) {
                 endereco.setId(res.getInt("id"));
-                endereco.setLogradouro(res.getString("nologradourome"));
+                endereco.setLogradouro(res.getString("logradouro"));
                 endereco.setNumero(res.getString("numero"));
                 endereco.setComplemento(res.getString("complemento"));
                 endereco.setBairro(res.getString("bairro"));
@@ -133,7 +133,7 @@ public class EnderecoDao extends Dao implements DaoI<Endereco>{
             List<Endereco> lista = new ArrayList<>();
             while (res.next()) {
                 endereco.setId(res.getInt("id"));
-                endereco.setLogradouro(res.getString("nologradourome"));
+                endereco.setLogradouro(res.getString("logradouro"));
                 endereco.setNumero(res.getString("numero"));
                 endereco.setComplemento(res.getString("complemento"));
                 endereco.setBairro(res.getString("bairro"));
@@ -153,7 +153,7 @@ public class EnderecoDao extends Dao implements DaoI<Endereco>{
     public List<Endereco> listarTodos() {
         List<Endereco> lista = new ArrayList<>();
         try {
-            stmt = conexao.prepareStatement("SELECT * FROM pessoa");
+            stmt = conexao.prepareStatement("SELECT * FROM endereco");
             res = stmt.executeQuery();
             while (res.next()) {
                 endereco.setId(res.getInt("id"));
