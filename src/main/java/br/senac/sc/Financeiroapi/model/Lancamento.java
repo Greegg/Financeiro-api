@@ -21,11 +21,12 @@ public class Lancamento {
     private String observacao;
     private TipoLancamento tipoLanc;
     private Categoria categoria;
+    private Pessoa pessoa;
 
     public Lancamento() {
     }
 
-    public Lancamento(int id, String descricao, LocalDate dataVencimento, LocalDate dataPagamento, double valor,String observacao, TipoLancamento tipoLanc, Categoria categoria) {
+    public Lancamento(int id, String descricao, LocalDate dataVencimento, LocalDate dataPagamento, double valor,String observacao, TipoLancamento tipoLanc, Categoria categoria,Pessoa pessoa) {
         this.id=id;
         this.descricao = descricao;
         this.dataVencimento = dataVencimento;
@@ -33,6 +34,7 @@ public class Lancamento {
         this.observacao = observacao;
         this.tipoLanc = tipoLanc;
         this.categoria = categoria;
+        this.pessoa=pessoa;
     }
 
     public int getId() {
@@ -98,5 +100,15 @@ public class Lancamento {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+    
+    
     
 }
